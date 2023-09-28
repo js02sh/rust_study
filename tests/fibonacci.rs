@@ -17,19 +17,29 @@ fn main() {
         println!("Put number for nth Fibonacci number:");
         let mut n = String::new();
 
-        io::stdin()
-            .read_line(&mut n)
-            .expect("Faild to read line");
-        let n:u64 = n.trim().parse()
-            .expect("Please input valid number");
+        match io::stdin().read_line(&mut n) {
+            Ok(_) => {
+                let n = n.trim(); // Remove newline character
+                if n == "q" {
+                    println!("Fibonacci Calculater Break");
+                    break;
+                } else {
+                    // Parse the input as a u64
+                    let n: u64 = n.parse().expect("Please write valid input");
 
-        for i in 1..=n {
-            print!("{} ", fibonacci(i));
-            if i == n {
-                println!("\nThe nth Fibonacci number is {}\n", fibonacci(i));
+                    let fib = fibonacci(n);
+
+                    for i in 1..=n {
+                        print!("{} ", fibonacci(i));
+                    }
+                    println!("\nThe nth Fibonacci number is {}", fib);
+                    println!("Press 'q' to finish\n");
+                }
+            }
+            Err(_err) => {
+                println!("Failed to read line");
             }
         }
-
     }
 }
 
