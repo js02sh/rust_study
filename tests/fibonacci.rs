@@ -10,8 +10,10 @@ fn fibonacci(n: u64) -> usize {
 }
 
 fn main() {
+    println!("------------------------------------");
     println!("Welcome to the Fibonacci calculator");
     loop {
+        println!("------------------------------------");
         println!("Put number for nth Fibonacci number:");
         let mut n = String::new();
 
@@ -19,7 +21,7 @@ fn main() {
             Ok(_) => {
                 let n = n.trim(); // Remove newline character
                 if n == "q" {
-                    println!("Break");
+                    println!("Fibonacci Calculater Break");
                     break;
                 } else {
                     // Parse the input as a u64
