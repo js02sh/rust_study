@@ -14,6 +14,8 @@ fn main() {
         println!("{}", "*".repeat(i as usize));
     }
 
+    println!("orange end");
+
 }
 
 
