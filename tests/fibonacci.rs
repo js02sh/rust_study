@@ -1,5 +1,5 @@
-use std::io;
-use std::cmp::Ordering;
+use std::{cmp::Ordering, io};
+//use std::cmp::Ordering;
 
 fn fibonacci(n: u64) -> usize {
     match n.cmp(&2) {
