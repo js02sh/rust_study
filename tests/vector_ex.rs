@@ -1,6 +1,3 @@
-
-
-
 fn main() {
     //let v: Vec<i32> = Vec::new();
     //let mut v = Vec::new();
@@ -26,6 +23,10 @@ fn main() {
     }
 
     println!("{:?}", v);
+
+    let s = vec!["first", "second", "third"].join("/");
+
+    println!("{}", s);
 
 
 }
