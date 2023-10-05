@@ -1,3 +1,4 @@
+//cargo test --test fibonacci_vec -- --nocapture
 use std::io;
 
 // Function to calculate the Fibonacci sequence up to the nth number
@@ -47,14 +48,19 @@ fn main() {
                 };
 
                 // Calculate the Fibonacci sequence up to the nth number
-                let fib_sequence = fibonacci(n);
+                // Check if the nth Fibonacci number is equal to 1
+                if n < 2 {
+                    println!("\nThe {}th Fibonacci number is 1.", n);
+                } else {
+                    let fib_sequence = fibonacci(n);
 
-                // Print the Fibonacci sequence and the nth Fibonacci number
-                println!("The Fibonacci sequence up to the {}th number is:", n);
-                for &num in &fib_sequence {
-                    print!("{} ", num);
+                    // Print the Fibonacci sequence and the nth Fibonacci number
+                    println!("The Fibonacci sequence up to the {}th number is:", n);
+                    for &num in &fib_sequence {
+                        print!("{} ", num);
+                    }
+                    println!("\n\nThe {}th Fibonacci number is {}", n, fib_sequence[n as usize - 1]);
                 }
-                println!("\n\nThe {}th Fibonacci number is {}", n, fib_sequence[n as usize - 1]);
             }
         }
     }
