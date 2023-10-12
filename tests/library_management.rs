@@ -80,8 +80,12 @@ fn main() {
 
     // Borrow a different book and return the first book
     let mut book2 = Book::new("The Hobbit", "J.R.R Tolkien");
+    let mut book3 = Book::new("The Hobbit2", "J.R.R Tolkien");
     patron1.borrow_book(&mut book2);
+    patron1.borrow_book(&mut book3);
     patron1.return_book(&mut book1);
+    //Book::borrow(&mut book1);
+    book1.borrow();
 }
 
 
