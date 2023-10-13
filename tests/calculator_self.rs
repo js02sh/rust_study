@@ -19,6 +19,10 @@ impl Calculator {
         self.value *= x;
     }
 
+    // fn devide(&mut self, x: f64) {
+    //     self.value /= x;
+    // }
+
     fn clear(&mut self) {
         self.value = 0.0;
     }
