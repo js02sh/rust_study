@@ -44,6 +44,9 @@ fn main() {
     println!("Debug: {:?}", point);
 }
 
+
+
+
 #[test]
 fn test() {
     main();
